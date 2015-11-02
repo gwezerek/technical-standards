@@ -1,7 +1,7 @@
 
 # FTE Technical Standards
 
-The standard below supplement the 
+The writing below supplements the best practices already in place at our partner organizations. The following documents should be read first, as we have made efforts to eliminate any redundancy between them and this document. 
 - [10up Engineering Best Practices](https://10up.github.io/Engineering-Best-Practices)
 - [WordPress VIP Best Practices](https://vip.wordpress.com/documentation/best-practices/)
 - [WordPress Core Coding Standards](https://make.wordpress.org/core/handbook/best-practices/coding-standards/php/)
@@ -10,9 +10,6 @@ The standard below supplement the
 
 - Latest two versions of all modern browsers
 - Internet Explorer 10 and up
-
-TBD:
-- Is this the right list?
 
 ## HTML
 
