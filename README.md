@@ -1,7 +1,10 @@
 
 # FTE Technical Standards
 
-The standard below supplement the [10up Engineering Best Practices](https://10up.github.io/Engineering-Best-Practices), [WordPress VIP Best Practices](https://vip.wordpress.com/documentation/best-practices/) and [WordPress Core Coding Standards](https://make.wordpress.org/core/handbook/best-practices/coding-standards/php/).
+The standard below supplement the 
+- [10up Engineering Best Practices](https://10up.github.io/Engineering-Best-Practices)
+- [WordPress VIP Best Practices](https://vip.wordpress.com/documentation/best-practices/)
+- [WordPress Core Coding Standards](https://make.wordpress.org/core/handbook/best-practices/coding-standards/php/)
 
 ## Browser support
 
