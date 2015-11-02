@@ -15,11 +15,11 @@ TBD:
 - Element attributes are omitted where redundant with HTML5 defaults
 
 *Good*
-```
+```html
 <meta charset="utf-8">
 ```
 *Bad*
-```
+```html
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 ```
 
