@@ -1,5 +1,5 @@
 
-# FiveThirtyEight Redesign Technical Requirements
+# FTE Code Styleguide
 
 ## Browser support
 
