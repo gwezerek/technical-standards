@@ -12,15 +12,19 @@ TBD:
 ## HTML
 
 - Use HTML5 elements wherever possible
-- Element attributes are omitted where redundant with HTML5 defaults 
+- Element attributes are omitted where redundant with HTML5 defaults
+
 *Good*
 ```
 <meta charset="utf-8">
 ```
 *Bad*
+```
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+```
 
 More [examples](http://davidbcalhoun.com/2010/top-ten-things-html5-makes-simpler/).
+
 - (i.e., `http-equiv=Content-Type content="text/html; charset=utf-8"` can just be `charset="utf-8"`)
 - Character encoding should be utf-8 and declared in both the `<head>` and the HTTP header
 - All attributes should be quoted
