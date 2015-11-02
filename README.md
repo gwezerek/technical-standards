@@ -1,23 +1,36 @@
 
-# FTE Code Styleguide
+# FTE Technical Standards
 
 ## Browser support
 
+- Latest two versions of all modern browsers
 - Internet Explorer 10 and up
-- The latest two versions of Chrome
-- The latest two versions of Firefox
-- The latest two versions of Safari
-- TK: Get browser profile of current visitors to flesh out this section
+
+TBD:
+- Is this the right list?
 
 ## HTML
 
-- HTML5 elements are used wherever possible
-- Element attributes are omitted where redundant with defaults (i.e., `http-equiv=Content-Type content="text/html; charset=utf-8"` can just be `charset="utf-8"`)
+- Use HTML5 elements wherever possible
+- Element attributes are omitted where redundant with HTML5 defaults 
+*Good*
+```
+<meta charset="utf-8">
+```
+*Bad*
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+More [examples](http://davidbcalhoun.com/2010/top-ten-things-html5-makes-simpler/).
+- (i.e., `http-equiv=Content-Type content="text/html; charset=utf-8"` can just be `charset="utf-8"`)
 - Character encoding should be utf-8 and declared in both the `<head>` and the HTTP header
 - All attributes should be quoted
 - Page `<title>` should be unique across pages for easy tabbing
 - The unique portion of the `<title>` should come first (i.e., "Bernie Sanders’s Big Chance To Woo Non-White Voters - FiveThirtyEight")
 - Some sort of templating engine (Handlebars, Twig) should be used
+- localStorage and sessionStorage are preferred for web storage, with cookies as a fallback for Opera Mini
+
+TBD: 
+- Which templating engine should we use?
 
 ## Styling
 
