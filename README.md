@@ -13,10 +13,10 @@
 
 - HTML5 elements are used wherever possible
 - Element attributes are omitted where redundant with defaults (i.e., `http-equiv=Content-Type content="text/html; charset=utf-8"` can just be `charset="utf-8"`)
-- Character encoding should be utf-8 and declared in both the <head> and the HTTP header
+- Character encoding should be utf-8 and declared in both the `<head>` and the HTTP header
 - All attributes should be quoted
 - Page `<title>` should be unique across pages for easy tabbing
-- The unique portion of the <title> should come first (i.e., "Bernie Sanders’s Big Chance To Woo Non-White Voters - FiveThirtyEight")
+- The unique portion of the `<title>` should come first (i.e., "Bernie Sanders’s Big Chance To Woo Non-White Voters - FiveThirtyEight")
 - Some sort of templating engine (Handlebars, Twig) should be used
 
 ## Styling
@@ -31,7 +31,7 @@
 - Avoid utility classes such as `.hidden` or `.clearfix`, which are easily forgotten and inconsistently applied. Use includes or mixins instead.
 - attribute values of 0 do not require units
 - Flexbox in particular is a strong and robust addition to the CSS specifications. Given our browser support requirements, we will use it whenever possible for layout and alignment.
-- Text styling (color, font-size, line-height) is applied to the text elements (<a>, <p>, <span>, etc.), not parent elements
+- Text styling (color, font-size, line-height) is applied to the text elements (`<a>`, `<p>`, `<span>`, etc.), not parent elements
 - Media queries are built mobile first
 - Spacing units are as much as possible defined as rem or em units so they scale appropriately with text size. Pixels can be used for detail work and should not exceed 5px (for example: 3px borders).
 - Floats should be avoided in favor of flexbox and absolute positioning
@@ -77,7 +77,7 @@
 - Use `===` unless converting checking against `null`, which will check against `undefined` as well
 - If using a loop, cache the array length
 - Identify Boolean variables with prefixes such as `is`, `can` and `has`
-- To hide images at certain breakpoints, target the parent of the <img> or `background-image` with `display: none;`, not the element itself
+- To hide images at certain breakpoints, target the parent of the `<img>` or `background-image` with `display: none;`, not the element itself
 - Use second parameter for radix with parseInt()
 
 ## Build processes
@@ -149,7 +149,7 @@
 - Header cells in tables should have scope='col' or scope='row'.
 - Color contrast should always be greater than or equal to 4.5:1 (you can use a contrast analyzer such as: https://www.paciellogroup.com/resources/contrastanalyser/)
 - Alternate entrypoints for images must always be provided. Examples include a caption, alt tag, title tag, or aria label. This requirement should be built into the CMS.
-- All buttons use button element (unless <input> or <a> is more appropriate)
+- All buttons use button element (unless `<input>` or `<a>` is more appropriate)
 - Multimedia should have closed captioning or audio description
 - We should use an accessibility auditor/linter in our build process
 - Site should be zoomable up to 200% without losing functionality
