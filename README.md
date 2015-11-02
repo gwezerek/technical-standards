@@ -15,7 +15,7 @@
 - Element attributes are omitted where redundant with defaults (i.e., `http-equiv=Content-Type content="text/html; charset=utf-8"` can just be `charset="utf-8"`)
 - Character encoding should be utf-8 and declared in both the <head> and the HTTP header
 - All attributes should be quoted
-- Page <title> should be unique across pages for easy tabbing
+- Page `<title>` should be unique across pages for easy tabbing
 - The unique portion of the <title> should come first (i.e., "Bernie Sanders’s Big Chance To Woo Non-White Voters - FiveThirtyEight")
 - Some sort of templating engine (Handlebars, Twig) should be used
 
