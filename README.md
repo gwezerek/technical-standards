@@ -29,6 +29,7 @@ More [examples](http://davidbcalhoun.com/2010/top-ten-things-html5-makes-simpler
 
 - Declare character encoding as `utf-8` in both the `<head>` and the HTTP header
 - All attributes should be quoted, paired with a value
+
 *Good*
 ```html
 <select title="My select title" data-attribute="32" selected="selected">This is my Link</select>
@@ -39,14 +40,11 @@ More [examples](http://davidbcalhoun.com/2010/top-ten-things-html5-makes-simpler
 ```
 - Page `<title>` should be unique across pages for easy tabbing
 - The unique portion of the `<title>` should come first (i.e., "Bernie Sanders’s Big Chance To Woo Non-White Voters - FiveThirtyEight")
-- Some sort of templating engine (Handlebars, Twig) should be used
 - localStorage and sessionStorage are preferred for web storage, with cookies as a fallback for Opera Mini
-- Have a structure/index for any links or js in the `<head>`
 - Minimize the use of conditional markup, alter styles via styling
 
 TBD: 
-- Which templating engine should we use?
-- How much of this does WP take care of for us
+- Should we use a templating engine, like Twig?
 
 ## Styling
 
