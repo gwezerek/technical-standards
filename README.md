@@ -1,6 +1,8 @@
 
 # FTE Technical Standards
 
+The standard below supplement the [10up Engineering Best Practices](https://10up.github.io/Engineering-Best-Practices), [WordPress VIP Best Practices](https://vip.wordpress.com/documentation/best-practices/) and [WordPress Core Coding Standards](https://make.wordpress.org/core/handbook/best-practices/coding-standards/php/).
+
 ## Browser support
 
 - Latest two versions of all modern browsers
@@ -25,16 +27,26 @@ TBD:
 
 More [examples](http://davidbcalhoun.com/2010/top-ten-things-html5-makes-simpler/).
 
-- (i.e., `http-equiv=Content-Type content="text/html; charset=utf-8"` can just be `charset="utf-8"`)
-- Character encoding should be utf-8 and declared in both the `<head>` and the HTTP header
-- All attributes should be quoted
+- Declare character encoding as `utf-8` in both the `<head>` and the HTTP header
+- All attributes should be quoted, paired with a value
+*Good*
+```html
+<select title="My select title" data-attribute="32" selected="selected">This is my Link</select>
+```
+*Bad*
+```html
+<select href=mylink.html title="My select title" data-attribute=32 selected>This is my Link</select>
+```
 - Page `<title>` should be unique across pages for easy tabbing
 - The unique portion of the `<title>` should come first (i.e., "Bernie Sanders’s Big Chance To Woo Non-White Voters - FiveThirtyEight")
 - Some sort of templating engine (Handlebars, Twig) should be used
 - localStorage and sessionStorage are preferred for web storage, with cookies as a fallback for Opera Mini
+- Have a structure/index for any links or js in the `<head>`
+- Minimize the use of conditional markup, alter styles via styling
 
 TBD: 
 - Which templating engine should we use?
+- How much of this does WP take care of for us
 
 ## Styling
 
@@ -110,7 +122,9 @@ TBD:
 ## Testing
 
 - Flesh out
-- All pull requests will go throug
+- Implement some sort of continuous integration to automate testing and deployment
+- All pull requests will go through
+- HTML is run once a month through the W3C html validator. Based on 
 
 ## Workflow
 - PRs for all changes other than hotfixes
@@ -127,6 +141,7 @@ TBD:
 ## Security
 
 - Use HTTPS
+- All ads are served via HTTPS
 - Flesh out with Paul
 
 ## Performance
