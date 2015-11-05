@@ -8,6 +8,22 @@ The writing below supplements the best practices already in place at our partner
 
 ## Browser support
 
+Any broswer with greater than 2% usage in the United States. As of November 2015, that includes:
+
+- Internet Explorer: 11
+- Chrome: 46, 45
+- Firefox: 41
+- iOS Safari: 9.1
+- Opera Mini: 5.0-8.0
+- Android Browser: 4.4
+- Chrome for Android: 46
+
+This means we do not support, among other browsers:
+- Internet Explorer: 8, 9, 10
+- Internet Edge: 12, 13
+
+We should design with progressive enhancement in mind and many of these browsers (Edge, Safarai, IE10) will come for free given that their advanced implementation of modern web standards. But in terms of what we test and what prevents us from shipping, the supported list is the standard.
+
 - Latest two versions of all modern browsers
 - Internet Explorer 10 and up
 
@@ -184,4 +200,3 @@ TBD:
 - We should use an accessibility auditor/linter in our build process
 - Site should be zoomable up to 200% without losing functionality
 - Use http://wave.webaim.org/ for benchmarking
-
