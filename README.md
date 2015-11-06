@@ -148,13 +148,13 @@ TBD
 -  In content headers, set `Expires` to a date up to one year in the future (one year is good unless we think the asset will change), set `Last-Modified` to the date the asset was last modified
 - Performance budget should be agreed upon and then built into the build process. For example:
 
-Metric      | Value  | Method           | Details                     | Breakpoints | Pages |
-___________ | ______ | ________________ | ___________________________ | ___________ | _____ |
-Page load   | 2 sec. | WebPageTest      | Median from five runs on 3G
-Page load   | 2 sec. | Google Analytics | Median across geographies
-Page weight | 800kb  | WebPageTest      | 
-Page weight | 300kb  | WebPageTest      |
-Speed Index | 1000   | WebPageTest      |
+Metric      | Value  | Method           | Details                       | Breakpoints | Pages
+___________ | ______ | ________________ | _____________________________ | ___________ | _____
+Page load   | 2 sec. | WebPageTest      | Median from five runs on 3G   | All         | All
+Page load   | 2 sec. | Google Analytics | Median across geographies     | All         | All 
+Page weight | 800kb  | WebPageTest      |                               | Desktop     | All
+Page weight | 300kb  | WebPageTest      |                               | Mobile      | All
+Speed Index | 1000   | WebPageTest      | Use Dulles location on Chrome | All         | All
 
 Total page load time 2s - WebPageTest, median from 5 runs on 3G - all breakpoints - All pages
     + Total page load time - 2s - GA, median across geographies - all breakpoints - All page
