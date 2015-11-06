@@ -149,7 +149,7 @@ TBD
 - Performance budget should be agreed upon and then built into the build process. For example:
 
 Metric      | Value  | Method           | Details                       | Breakpoints | Pages
-___________ | ______ | ________________ | _____________________________ | ___________ | _____
+----------- | ------ | ---------------- | ----------------------------- | ----------- | -----
 Page load   | 2 sec. | WebPageTest      | Median from five runs on 3G   | All         | All
 Page load   | 2 sec. | Google Analytics | Median across geographies     | All         | All 
 Page weight | 800kb  | WebPageTest      |                               | Desktop     | All
