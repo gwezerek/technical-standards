@@ -69,6 +69,7 @@ TBD:
 - Vendor prefixes should be added and maintained in post-processing
 - Mixins go in a mixins file. This mixin file should be very well documented and include example usage in the comments
 - Favor native methods over lodash over underscore for functional programming needs
+- Some sort of live reload feature should be attached to our watch process
 
 TBD: 
 - We have a lot of tasks setup with grunt. Is there a desire to switch to gulp or Webpack for dependecy management and build processing?
@@ -92,22 +93,23 @@ TBD:
 - Site should use ES6 with compilation via Babel
 - A .jslint config file will be used to enforce syntax and style (indenting, spaces, capitalization, braces). Linting will happen in the build process.
 - Functions should aim toward statelessness, where they require no outside data, produce no side effects and return a new object instead of modifying an existing one
-- Prefer the rest parameter (`...nametk`) over `arguments`
-- Avoid nested function calls, use composition instead
-- Favor `const` over `let` and `let` over `var`
-- Favor immediately invoking function expressions over `if`, `else if`, `else` and `switch`
-- Favor Maps over Objects when it makes sense
 - Clear, readable, expansive code is preferred to comments. Still, for code like regular expressions or anything else that might not be easy for a beginning or intermediate developer to read, comment appropriately.
 - Use `===` unless checking against `null`, where a `==` will check against `undefined` as well
 - If using a loop, cache the array length
 - Use second parameter for radix with parseInt()
 
-## Version control
+Ideas that I've read are good practices but I don't care too much about
+- Prefer the rest parameter (`...nametk`) over `arguments`
+- Avoid nested function calls, use composition instead
+- Favor `const` over `let` and `let` over `var`
+- Favor immediately invoking function expressions over `if`, `else if`, `else` and `switch`
+- Favor Maps over Objects when it makes sense
 
-- Merges will follow established pattern (FLESH OUT)
+## Version control
 
 TBD
 - Is there a world in which we use GitHub for version control instead of Beanstalk? Just to lower the bar for new hires who are working on the project.
+- Flesh out merge process with standards about non fast-forward, when to use rebasing, namespace for different kinds of branches
 
 ## Testing
 
@@ -115,7 +117,7 @@ TBD
 - HTML should be run once a month through the W3C html validator. If there are areas where we're OK not passing, those will be documented and kept up-to-date.
 
 TBD
-- This needs a lot of fleshing out in terms of when we write tests, what framework we use and which tests are mandatory for build deployment
+- Flesh out in terms of when we write tests, what framework we use and which tests are mandatory for build deployment
 
 ## Workflow
 
@@ -133,20 +135,28 @@ TBD
 
 ## Performance
 
-- Site will use a single stylesheet for common styles across the site and then page-specific stylesheets so that the user can cache the shared css
+- Site should use a single stylesheet for styles common across the site and then page-specific stylesheets so that the user can cache the shared css
 - Ads, social sharing and any other third-party widgets should be loaded at the end of the body, asynchronously
-- Assets are gzipped, except for woff and woff2 font files
--  In content headers, set `Expires` to a date up to one year in the future (one year is good unless we think the asset will change), set `Last-Modified` to the date the asset was last modified
 - @font-face stack will use .woff2 and then .woff, in that order
 - Ideally we should load four or less font files per page. Max is six.
 - Site will implement responsive images solution, ideally using srcset and srcset polyfill
 - Site will take advantage of prefetching in Chrome
 - HTTP/2 will be adopted as soon as our server supports it
 - Build process will use UnCSS or similar tech to prune unused styles
-- Assets will be gzipped, concatenated and minified (not in that order), with appropriate expiration dates on the content headers
-- Responsive images solution should be in place for serving smaller or retina images when appropriate. srcset is preferred, given it's increasing adoption.
+- Assets will be gzipped, concatenated and minified (not in that order)
+- woff and woff2 font files should not be gzipped
+-  In content headers, set `Expires` to a date up to one year in the future (one year is good unless we think the asset will change), set `Last-Modified` to the date the asset was last modified
 - Performance budget should be agreed upon and then built into the build process. For example:
-    + Total page load time - 2s - WebPageTest, median from 5 runs on 3G - all breakpoints - All pages
+
+Metric      | Value  | Method           | Details                     | Breakpoints | Pages |
+___________ | ______ | ________________ | ___________________________ | ___________ | _____ |
+Page load   | 2 sec. | WebPageTest      | Median from five runs on 3G
+Page load   | 2 sec. | Google Analytics | Median across geographies
+Page weight | 800kb  | WebPageTest      | 
+Page weight | 300kb  | WebPageTest      |
+Speed Index | 1000   | WebPageTest      |
+
+Total page load time 2s - WebPageTest, median from 5 runs on 3G - all breakpoints - All pages
     + Total page load time - 2s - GA, median across geographies - all breakpoints - All page
     + Total page weight - 800kb - WebPageTest - desktop - All pages
     + Total page weight - 300kb - WebPageTest - mobile - All pages
