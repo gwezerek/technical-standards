@@ -49,7 +49,6 @@ We should design with progressive enhancement in mind and support for many of th
 -  In content headers, set `Expires` to a date up to one year in the future (one year is good unless we think the asset will change), set `Last-Modified` to the date the asset was last modified
 - Implement monthly performance report showing median and 95th percentile load time for the month (available in GA), a time series to contextualize those numbers, and specific pages and changes that celebrate performance wins
 - To hide images at certain breakpoints, target the parent of the `<img>` or `background-image` with `display: none;`, not the element itself
-- Performance reports should be sent out every month to all edit, along with descriptions of performance victories and setbacks
 - Performance budget should be agreed upon and then built into the build process. Before the full redesign, the following should be achieved:
 
 Metric      | Value  | Method           | Details                       | Breakpoints | Pages
@@ -179,7 +178,7 @@ TBD
 - Some sort of live reload feature should be attached to our watch process
 
 TBD: 
-- We have a lot of tasks setup with grunt. Is there a desire to switch to gulp or Webpack for dependecy management and build processing?
+- We have a lot of grunt tasks. Is there a desire to switch to gulp or Webpack for dependecy management and build processing?
 - We currently use SASS for style abstraction. Is there a desire to switch to postcss?
 
 ## Version control
