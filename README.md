@@ -139,6 +139,7 @@ TBD
 - Ads, social sharing and any other third-party widgets should be loaded at the end of the body, asynchronously
 - @font-face stack will use .woff2 and then .woff, in that order
 - Ideally we should load four or less font files per page. Max is six.
+- FOUT is preferable to blocking fonts, though design should aim to ensure that the fallback fonts are as similiar in size to the replacement in order to prevent page jumps on @font-face load
 - Site will implement responsive images solution, ideally using srcset and srcset polyfill
 - Site will take advantage of prefetching in Chrome
 - HTTP/2 will be adopted as soon as our server supports it
@@ -148,15 +149,26 @@ TBD
 -  In content headers, set `Expires` to a date up to one year in the future (one year is good unless we think the asset will change), set `Last-Modified` to the date the asset was last modified
 - Implement monthly performance report showing median and 95th percentile load time for the month (available in GA), a time series to contextualize those numbers, and specific pages and changes that celebrate performance wins
 - To hide images at certain breakpoints, target the parent of the `<img>` or `background-image` with `display: none;`, not the element itself
-- Performance budget should be agreed upon and then built into the build process. For example:
+- Performance budget should be agreed upon and then built into the build process. Before the full redesign, the following should be achieved:
 
+Metric      | Value  | Method           | Details                       | Breakpoints | Pages
+----------- | ------ | ---------------- | ----------------------------- | ----------- | -----
+Page load   | 3 sec. | WebPageTest      | Median from five runs on 3G   | All         | All
+Page load   | 3 sec. | Google Analytics | Median across geographies     | All         | All 
+Page weight | 1.5MB  | WebPageTest      |                               | Desktop     | All
+Page weight | 1MB    | WebPageTest      |                               | Mobile      | All
+Speed Index | 3000   | WebPageTest      | Use Dulles location on Chrome | All         | All
+
+- After redesign, the following should be achieved:
 Metric      | Value  | Method           | Details                       | Breakpoints | Pages
 ----------- | ------ | ---------------- | ----------------------------- | ----------- | -----
 Page load   | 2 sec. | WebPageTest      | Median from five runs on 3G   | All         | All
 Page load   | 2 sec. | Google Analytics | Median across geographies     | All         | All 
 Page weight | 800kb  | WebPageTest      |                               | Desktop     | All
-Page weight | 300kb  | WebPageTest      |                               | Mobile      | All
-Speed Index | 1000   | WebPageTest      | Use Dulles location on Chrome | All         | All
+Page weight | 500kb  | WebPageTest      |                               | Mobile      | All
+Speed Index | 2000   | WebPageTest      | Use Dulles location on Chrome | All         | All
+
+- Performance reports should be sent out every month to all edit, along with descriptions of performance victories and setbacks
 
 ## Accessibility
 
