@@ -31,8 +31,6 @@ Internet Edge | 12, 13
 Safari | 8, 9
 Android Browser | 4.3-4.4, 4.2-4.3
 
-
-
 We should design with progressive enhancement in mind and support for many of these browsers (IE10, Edge, Safari) will come for free given their implementation of modern web standards. But in terms of what we test and what prevents us from shipping, the first list serves as our QA checklist.
 
 ## Performance
@@ -107,6 +105,8 @@ TBD:
 
 ## Styling
 
+- A naming convention for styles should be agreed upon and followed. I have enjoyed using [BEM](https://en.bem.info/method/definitions/), but I know others prefer [RSCSS](https://github.com/rstacruz/rscss) and [SMACSS](https://smacss.com/).
+- Before the redesign we should annotate comps with the skeleton of styles so that we are all using the same descriptors for lists, list items, wrapping divs, etc.
 - Nesting should _only_ be used for pseudoelements and pseudoselectors. Nobody wants to play the "how many levels deep do I need to nest this to override another style" game.
 - Complexity in the markup (many classes) is preferred over complexity in the styles (levels of nesting, @extends)
 - Styles should target classes, not ids or data attributes
