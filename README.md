@@ -149,6 +149,7 @@ TBD
 -  In content headers, set `Expires` to a date up to one year in the future (one year is good unless we think the asset will change), set `Last-Modified` to the date the asset was last modified
 - Implement monthly performance report showing median and 95th percentile load time for the month (available in GA), a time series to contextualize those numbers, and specific pages and changes that celebrate performance wins
 - To hide images at certain breakpoints, target the parent of the `<img>` or `background-image` with `display: none;`, not the element itself
+- Performance reports should be sent out every month to all edit, along with descriptions of performance victories and setbacks
 - Performance budget should be agreed upon and then built into the build process. Before the full redesign, the following should be achieved:
 
 Metric      | Value  | Method           | Details                       | Breakpoints | Pages
@@ -160,6 +161,7 @@ Page weight | 1MB    | WebPageTest      |                               | Mobile
 Speed Index | 3000   | WebPageTest      | Use Dulles location on Chrome | All         | All
 
 - After redesign, the following should be achieved:
+
 Metric      | Value  | Method           | Details                       | Breakpoints | Pages
 ----------- | ------ | ---------------- | ----------------------------- | ----------- | -----
 Page load   | 2 sec. | WebPageTest      | Median from five runs on 3G   | All         | All
@@ -168,7 +170,6 @@ Page weight | 800kb  | WebPageTest      |                               | Deskto
 Page weight | 500kb  | WebPageTest      |                               | Mobile      | All
 Speed Index | 2000   | WebPageTest      | Use Dulles location on Chrome | All         | All
 
-- Performance reports should be sent out every month to all edit, along with descriptions of performance victories and setbacks
 
 ## Accessibility
 
