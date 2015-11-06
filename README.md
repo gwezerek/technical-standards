@@ -12,19 +12,25 @@ Some recommendations here are broad, others are very specific. Some are goals fo
 
 We support any broswer with greater than 2% usage in the United States according to [caniuse.com](http://caniuse.com/). As of November 2015, that includes:
 
-- Internet Explorer: 11
-- Chrome: 46, 45
-- Firefox: 41
-- iOS Safari: 9.1
-- Opera Mini: 5.0-8.0
-- Android Browser: 4.4
-- Chrome for Android: 46
+Browser | Versions
+------- | --------
+Internet Explorer | 11
+Chrome | 46, 45
+Firefox | 41
+iOS Safari | 9.1
+Opera Mini | 5.0-8.0
+Android Browser | 4.4
+Chrome for Android | 46
 
 This means we do not support, among other browsers:
-- Internet Explorer: 8, 9, 10
-- Internet Edge: 12, 13
-- Safari
-- Android Browser: 4.3-4.4, 4.2-4.3
+Browser | Versions
+------- | --------
+Internet Explorer | 8, 9, 10
+Internet Edge | 12, 13
+Safari | 8, 9
+Android Browser | 4.3-4.4, 4.2-4.3
+
+
 
 We should design with progressive enhancement in mind and support for many of these browsers (IE10, Edge, Safari) will come for free given their implementation of modern web standards. But in terms of what we test and what prevents us from shipping, the first list serves as our QA checklist.
 
