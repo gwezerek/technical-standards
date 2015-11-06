@@ -23,6 +23,7 @@ Android Browser | 4.4
 Chrome for Android | 46
 
 This means we do not support, among other browsers:
+
 Browser | Versions
 ------- | --------
 Internet Explorer | 8, 9, 10
