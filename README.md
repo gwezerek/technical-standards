@@ -146,6 +146,8 @@ TBD
 - Assets will be gzipped, concatenated and minified (not in that order)
 - woff and woff2 font files should not be gzipped
 -  In content headers, set `Expires` to a date up to one year in the future (one year is good unless we think the asset will change), set `Last-Modified` to the date the asset was last modified
+- Implement monthly performance report showing median and 95th percentile load time for the month (available in GA), a time series to contextualize those numbers, and specific pages and changes that celebrate performance wins
+- To hide images at certain breakpoints, target the parent of the `<img>` or `background-image` with `display: none;`, not the element itself
 - Performance budget should be agreed upon and then built into the build process. For example:
 
 Metric      | Value  | Method           | Details                       | Breakpoints | Pages
@@ -155,14 +157,6 @@ Page load   | 2 sec. | Google Analytics | Median across geographies     | All   
 Page weight | 800kb  | WebPageTest      |                               | Desktop     | All
 Page weight | 300kb  | WebPageTest      |                               | Mobile      | All
 Speed Index | 1000   | WebPageTest      | Use Dulles location on Chrome | All         | All
-
-Total page load time 2s - WebPageTest, median from 5 runs on 3G - all breakpoints - All pages
-    + Total page load time - 2s - GA, median across geographies - all breakpoints - All page
-    + Total page weight - 800kb - WebPageTest - desktop - All pages
-    + Total page weight - 300kb - WebPageTest - mobile - All pages
-    + Speed Index - 1000 - WebPageTest using Dulles location on Chrome - all breakpoints - All pages
-- Implement monthly performance report showing median and 95th percentile load time for the month (available in GA), a time series to contextualize those numbers, and specific pages and changes that celebrate performance wins
-- To hide images at certain breakpoints, target the parent of the `<img>` or `background-image` with `display: none;`, not the element itself
 
 ## Accessibility
 
