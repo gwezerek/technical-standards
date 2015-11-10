@@ -8,9 +8,14 @@ The writing below supplements the best practices already in place at our partner
 
 Some recommendations here are broad, others are very specific. Some are goals for the redesign, others should go into effect right away. There's a lot missing and a number of sections need to be fleshed out due to my lack of knowledge.
 
+TBD - Maybe certain rules should be repeated.
+TBD - Which rules are 100 percent essential
+
 ## Browser support
 
 We support any broswer with greater than 2% usage in the United States according to [caniuse.com](http://caniuse.com/). As of November 2015, that includes:
+
+TBD: Update this to use U.S. stats, definitely include Safari, investigate below
 
 Browser | Versions
 ------- | --------
@@ -36,20 +41,42 @@ We should design with progressive enhancement in mind and support for many of th
 ## Performance
 
 - Site should use a single stylesheet for styles common across the site and then page-specific stylesheets so that the user can cache the shared css
+TBD: Investigate, benchmark CSS file, see if we can split
+
 - Ads, social sharing and any other third-party widgets should be loaded at the end of the body, asynchronously
+
+TBD: Design for placeholder ads
+
 - @font-face stack will use .woff2 and then .woff, in that order
+
+TBD: Policy when to use data uris for fonts or svgs
+Prefer icon font > svg
+
 - Ideally we should load four or less font files per page. Max is six.
 - FOUT is preferable to blocking fonts, though design should aim to ensure that the fallback fonts are as similiar in size to the replacement in order to prevent page jumps on @font-face load
 - Site will implement responsive images solution, ideally using srcset and srcset polyfill
+
+Investigate photon support for srcset
+
 - Site will take advantage of prefetching in Chrome
 - HTTP/2 will be adopted as soon as our server supports it
 - Build process will use UnCSS or similar tech to prune unused styles
+
+TBD: Add flags for things to do right now
 - Assets will be gzipped, concatenated and minified (not in that order)
 - woff and woff2 font files should not be gzipped
--  In content headers, set `Expires` to a date up to one year in the future (one year is good unless we think the asset will change), set `Last-Modified` to the date the asset was last modified
+- In content headers, set `Expires` to a date up to one year in the future (one year is good unless we think the asset will change), set `Last-Modified` to the date the asset was last modified
 - Implement monthly performance report showing median and 95th percentile load time for the month (available in GA), a time series to contextualize those numbers, and specific pages and changes that celebrate performance wins
+
+TBD: Consider adding GA for whole site
+TBD: What's our baseline on an empty page
+
 - To hide images at certain breakpoints, target the parent of the `<img>` or `background-image` with `display: none;`, not the element itself
 - Performance budget should be agreed upon and then built into the build process. Before the full redesign, the following should be achieved:
+
+TBD: Get ads sold just for us, talk to Krista and see if they're going over ESPN's content, add no add option for testing
+
+Add a table where we are today with these metrics
 
 Metric      | Value  | Method           | Details                       | Breakpoints | Pages
 ----------- | ------ | ---------------- | ----------------------------- | ----------- | -----
@@ -100,13 +127,13 @@ Speed Index | 2000   | WebPageTest      | Use Dulles location on Chrome | All   
 - localStorage and sessionStorage are preferred for web storage, with cookies as a fallback for Opera Mini
 
 TBD: 
-- Could we use a templating engine, like Twig?
+- Could we use a templating engine, like Twig? Discuss with 10up.
 
 ## Styling
 
 - A naming convention for styles should be agreed upon and followed. I have enjoyed using [BEM](https://en.bem.info/method/definitions/), but I know others prefer [RSCSS](https://github.com/rstacruz/rscss) and [SMACSS](https://smacss.com/).
 - Before the redesign we should annotate comps with the skeleton of styles so that we are all using the same descriptors for lists, list items, wrapping divs, etc.
-- Nesting should _only_ be used for pseudoelements and pseudoselectors. Nobody wants to play the "how many levels deep do I need to nest this to override another style" game.
+- Nesting should _only_ be used for pseudoelements and pseudoselectors. Nobody wants to play the "how many levels deep do I need to nest this to override another style" game. *explicitly mention*
 - Complexity in the markup (many classes) is preferred over complexity in the styles (levels of nesting, @extends)
 - Styles should target classes, not ids or data attributes
 - Inline styling should not be used
@@ -123,7 +150,7 @@ TBD:
 - Text styling (color, font-size, line-height) should be applied to the text elements (`<a>`, `<p>`, `<span>`, etc.), not parent elements
 - Hard-coded magic numbers are avoided and, if necessary, defined in the _variables.scss file. An example would be something like `$leftRailMinWidth: 30rem`
 - Spacing units are defined as rem or em units so they scale appropriately with text size. Pixels can be used for detail work and should not exceed 5px (for example: 3px borders).
-- Floats should be avoided in favor of flexbox and absolute positioning
+- Apply spacing to bottom of elements for consistency
 - Favor `transition` over `animation`
 - Favor seconds over ms for `transition` units
 
@@ -144,6 +171,9 @@ TBD:
 - Identify Boolean variables with prefixes such as `is`, `can` and `has`
 - Site should use ES6 with compilation via Babel
 - A .jslint config file will be used to enforce syntax and style (indenting, spaces, capitalization, braces). Linting will happen in the build process.
+
+TBD: Add jscs linting in build process
+
 - Functions should aim toward statelessness, where they require no outside data, produce no side effects and return a new object instead of modifying an existing one
 - Clear, readable, expansive code is preferred to comments. Still, for code like regular expressions or anything else that might not be easy for a beginning or intermediate developer to read, comment appropriately.
 - Use `===` unless checking against `null`, where a `==` will check against `undefined` as well
@@ -160,21 +190,26 @@ Ideas that I've read are good practices but I don't care too much about
 ## Security
 
 - We should use HTTPS, and therefore all ads should be served via HTTPS
+- People should use two-factor authentication
 
 ## Testing
 
 - Implement some sort of continuous integration to automate testing and deployment
 - HTML should be run once a month through the W3C html validator. If there are areas where we're OK not passing, those will be documented and kept up-to-date.
+- Acceptance tests and code-level tests (unit, integration)
+- Performance regressions
 
 TBD
+- Talk to 10up about this
 - Flesh out in terms of when we write tests, what framework we use and which tests are mandatory for build deployment
+- Make sure test not-logged in state
 
 ## Technology
 
 - We should avoid vendor styles aside from an opinionated reset, such as Normalize CSS or Sanitize CSS
+- Vendor CSS should be carefully admitted into projects
 - Vendor prefixes should be added and maintained in post-processing
 - Mixins go in a mixins file. This mixin file should be very well documented and include example usage in the comments
-- Favor native methods over lodash over underscore for functional programming needs
 - Some sort of live reload feature should be attached to our watch process
 
 TBD: 
@@ -186,13 +221,18 @@ TBD:
 TBD
 - Is there a world in which we use GitHub for version control instead of Beanstalk? Just to lower the bar for new hires who are working on the project.
 - Flesh out merge process with standards about non fast-forward, when to use rebasing, namespace for different kinds of branches
+- fix-, feature-, style-, test locally, merge to preview, merge to svn to deploy
 
 ## Workflow
 
 TBD
 - I'd like to implement code review not only for error checking but also to encourage knowledge sharing between developers. Are the downsides in added overhead too costly?
 
+## PHP
+- All code must pass WP VIP and WP extras rulesets
+
 ## Syntax and editor config
 
+- No trailing whitespace, tabs for indenting
 - There is no enforced character count for line breaks. For comments, break where it feels natural.
 - A shared [.editorconfig](http://editorconfig.org/) file could help prevent whitespace changes in diffs, but I know people might have strong personal preferences
