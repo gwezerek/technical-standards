@@ -1,17 +1,12 @@
-ESPN WordPress local development setup
-
+# ESPN WordPress local development setup
 Brief description of the general architecture of the ESPN Wordpress install. There’s a lot here, don’t get overwhelmed.
 
-Request to be added to ESPN’s GitHub install
+## Email ESPNbuildeng@espn.com and request to be added to ESPN’s GitHub install
+> Title: Request to be added to code.espn.com Github
 
-Send an email to ESPNbuildeng@espn.com:
+> I work for SITENAME, which is owned by ESPN. My GitHub username is USERNAME. My ESPN email is EMAIL@ESPN.COM. I have two-factor authentication enabled. Please let me know if you need anything else to add me to the code.espn.com.
 
-Title: Request to be added to code.espn.com Github
-
-I work for SITENAME, which is owned by ESPN. My GitHub username is USERNAME. My ESPN email is EMAIL@ESPN.COM. I have two-factor authentication enabled. Please let me know if you need anything else to add me to the code.espn.com.
-
-
-Configure GitHub
+## Configure GitHub
 Add your SSH key to GitHub: https://github.com/settings/ssh
 Add your SSH key to ESPN GitHub: https://code.espn.com/settings/ssh
 Enable two-factor authentication: https://github.com/settings/security
@@ -277,4 +272,3 @@ Tap “weinre target debug”
 In Chrome on your desktop:
 Under “Targets,” click the link corresponding to your session
 Click Elements
-
